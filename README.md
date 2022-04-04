@@ -18,7 +18,6 @@ Try to solve the exercise without changing the existing HTML nested inside the `
 ### Bonus 2
 
 Try to evaluate the expression without using the `eval()` function.
-
 ### Bonus 3
 
 Enhance the calculator so users can input arithmetic expressions using their keyboard. More specifically, the app should allow a user to do the following.
