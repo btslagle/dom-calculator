@@ -4,16 +4,17 @@ const clear = document.querySelector("#clear")
 
 buttons.forEach(button => {
     button.addEventListener("click", event => {
-        if (button.textContent === "÷") {
+        if (button.textContent == "÷") {
             screen.textContent += "/"
         }
-        if (button.textContent === "x") {
+        if (button.textContent == "x") {
             screen.textContent += "*"
         }
         if (button.textContent === "C") {
             screen.textContent = ""
-        } else
+        }
+        if (button.textContent !== "÷" && button.textContent !== "=" && button.textContent !== "x" && button.textContent !== "C") {
             screen.textContent += button.textContent
-            // screen.textContent = "whats ups"
+        }
     })
 })
