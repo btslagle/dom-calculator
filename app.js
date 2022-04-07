@@ -17,12 +17,9 @@ buttons.forEach(button => {
         if (button.textContent !== "÷" && button.textContent !== "=" && button.textContent !== "x" && button.textContent !== "C" && acceptingInput) {
             screen.textContent += button.textContent
         }
-        if (screen.textContent.includes("/" || "*" || "+" || "-" && button.textContent.includes("/" || "*" || "+" || "-"))) {
-            screen.textContent = eval(screen.textContent)
-        }
         try {
             if (button.textContent === "=" && acceptingInput) {
-                if (screen.textContent.includes("/0" || "//" || "**" || "++" || "--")) {
+                if (screen.textContent.includes("/0")) {
                     screen.textContent = "Error, Resetting"
                 }
                 screen.textContent = eval(screen.textContent)
