@@ -5,17 +5,20 @@ const clear = document.querySelector("#clear")
 
 buttons.forEach(button => {
     button.addEventListener("click", event => {
-        if (button.textContent == "÷") {
+        if (button.textContent == "÷" && acceptingInput) {
             screen.textContent += "/"
         }
-        if (button.textContent == "x") {
+        if (button.textContent == "x" && acceptingInput) {
             screen.textContent += "*"
         }
-        if (button.textContent === "C") {
+        if (button.textContent === "C" && acceptingInput) {
             screen.textContent = ""
         }
-        if (button.textContent !== "÷" && button.textContent !== "=" && button.textContent !== "x" && button.textContent !== "C") {
+        if (button.textContent !== "÷" && button.textContent !== "=" && button.textContent !== "x" && button.textContent !== "C" && acceptingInput) {
             screen.textContent += button.textContent
+        }
+        if (screen.textContent.includes("/" || "*" || "+" || "-" && button.textContent.includes("/" || "*" || "+" || "-"))) {
+            screen.textContent = eval(screen.textContent)
         }
         try {
             if (button.textContent === "=" && acceptingInput) {
@@ -30,7 +33,7 @@ buttons.forEach(button => {
             setTimeout(function() {
                 acceptingInput = true
                 screen.textContent = ""
-            }, 1000)
+            }, 1800)
         }
     })
 })
